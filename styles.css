@@ -1,0 +1,72 @@
+body {
+    background-color: #a7a7a7;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #020202;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: transparent;
+    cursor: pointer;
+}
+
+.card.flipped {
+    background-color: #ffffff;
+    color: rgb(255, 255, 255);
+}
+
+.card:before {
+    content: "??";
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+}
+
+.card.flipped:before {
+    content: attr(data-card);
+}
+
+.card.matched {
+    background-color: #fefffe;
+    cursor: default;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.restart-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.restart-btn:hover {
+    background-color: #1a237e;
+}
